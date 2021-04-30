@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>PlantCare</title>
+
+
+    <style>
+
+
+article, aside, figure, footer, header, hgroup,
+  menu, nav, section { display: block; }
+
+.frame {
+  width: 300px;
+  height: 350px;
+  border-radius: 4px;
+  border: 3px solid #ccc;
+  background: #eee;
+  margin: auto;
+  padding: 15px 10px;
+}
+
+.sptxt {
+text-shadow: rgb(3 3 3) 0px 2px 5px;
+color: white;
+}
+
+
+.select {
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="utf-8" />
+    
+    <!-- Title Tag -->
+
+<!--
+
+November Template
+
+http://www.templatemo.com/tm-473-november
+
+-->
+    <!-- <<Mobile Viewport Code>> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            
+    <!-- <<Attched Stylesheets>> -->
+    <link rel="stylesheet" href="/static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/media.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>    
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<!-- \\ Begin Holder \\ -->
+<div class="DesignHolder">
+	<!-- \\ Begin Frame \\ -->
+	<div class="LayoutFrame">
+        <!-- \\ Begin Header \\ -->
+        <header>
+            <div class="Center">
+                <div class="site-logo">
+                	<h1><a href="#">Plant<span>Care</span></a></h1>
+                </div>
+               <div id="mobile_sec">
+               <div class="mobile"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
+                <div class="menumobile">
+                    <!-- \\ Begin Navigation \\ -->
+                    <nav class="Navigation">
+                        <ul>
+                            <li class="active">                                
+                                <a href="#home">Home</a>
+                                <span class="menu-item-bg"></span>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                                <span class="menu-item-bg"></span>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!-- // End Navigation // -->
+				</div>
+				</div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- // End Header // -->
+        <!-- \\ Begin Banner Section \\ -->
+
+        <script>
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(300)
+                        .height(350);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        </script>
+        <script type="text/javascript">
+
+
+                               function upload() {
+                                    var myform = document.getElementById("form1");
+                                    var fd = new FormData(myform );
+                                    console.log("darshil");
+                                    $.ajax({
+                                    cache: false,
+                                    processData: false,
+                                    contentType: false,
+                                    type: "POST",
+	   				                url: "/predict",
+	   				                data: fd,
+                                    success: function(response){
+                                    document.getElementById("result").innerHTML = response;
+                                    }
+                                    })
+                                    event.preventDefault();
+                               }
+             </script>
+        <div class="Banner_sec" id="home">
+            <!--  \\ Begin banner Side -->
+            <div class="bannerside">
+	            <div class="Center">
+                    <!--  \\ Begin Left Side -->
+                    <div class="leftside">
+                        <h3><span class="sptxt">Plant Disease Prediction</span></h3>
+                        <p>Intro</p>
+                            <form action="/predict" type="post" enctype="multipart/form-data" id="form1">
+                            <p>Select image:</p>
+                            <input class = "select" onchange="readURL(this);" type="file" id="img" name="img" accept="image/*" required>
+                            <p><button onclick="return upload()" id="button1" class="btn">Predict</button></p>
+                            </form>
+                        <p id="result"></p>
+                    </div>
+                    <!--  // End Left Side // -->
+                    <!--  \\ Begin Right Side -->
+
+
+                    <div class="rightside">
+                            <img id="blah" class="frame" src="/static/img/default.jfif" alt="your image" />
+                    </div>
+
+
+                    </div>
+                    <!--  // End Right Side // -->
+	            </div>
+            </div>
+            <!--  // End banner Side // -->
+            <div class="clear"></div>
+        </div>
+
+        <!-- // End Banner Section // -->
+         <div class="bgcolor"></div>
+        <!-- \\ Begin Container \\ -->
+        <div id="Container">
+            <!-- \\ Begin About Section \\ -->
+            <div class="About_sec" id="about">
+                <div class="Center">            	
+                    <h2>Team</h2>
+                    <br>
+                    <h3 style="text-align: center;">18BCE038 - Darshil Chauhan</h3>
+                    <h3 style="text-align: center;">18BCE045 - Chittal Patel</h3>
+                    <h3 style="text-align: center;">18BCE054 - Dhruvil Dholaria</h3>
+                    <div class="Line"></div>	
+                    <!-- \\ Begin Tab side \\ -->
+                    <div class="Tabside">
+                        <h1 id="cont-1" style="color: #5BD21F; text-align: center;"><b>Objective</b></h1>
+
+                        <h4 style="text-align: center;">The objective of this report is to show, how image processing techniques and CNN(Convolution
+Neural Network) are used to get better results in detecting different plant diseases. Plant diseases are extremely significant, as that can adversely affect both quality and quantity of crops in agriculture production. Plant disease diagnosis is very essential in earlier stage in order to cure and control them. Generally the naked eye method is used to identify the diseases. In this method experts are involved who have the ability to detect the changes in leaf color. This method involves lots of efforts, takes long time and also not practical for the large fields. Many times different experts identify the same disease as the different disease. This method is expensive as it requires continuous monitoring of experts. Depending on the applications, many systems have been proposed to solve the problems, by making use of image processing, pattern recognition and some automatic classification tools. In this report we present image processing techniques plus neural network to detect different leaf diseases.
+</h4>
+
+
+
+                    <!-- // End Tab Side // -->
+                </div>
+            </div>
+            <!-- // End About Section // -->
+        <!-- \\ Begin Services Section \\ -->
+
+            <!-- // End Contact Section // -->
+        </div>
+        <!-- // End Container // -->
+	</div>
+	<!-- // End Layout Frame // -->
+</div>
+<!-- // End Design Holder // -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!-- <<Attched Javascripts>> -->
+<script type="text/javascript" src="/static/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.sudoSlider.min.js"></script>
+<script type="text/javascript" src="/static/js/global.js"></script>
+<script type="text/javascript" src="/static/js/modernizr.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+</body>
+</html>
